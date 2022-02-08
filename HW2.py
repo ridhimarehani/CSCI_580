@@ -50,7 +50,7 @@ for dat in data1:
       gamma = f01/f01a
       z_at_pixel = alpha * dat['v0']['v'][2] + beta * dat['v1']['v'][2] + gamma * dat['v2']['v'][2]
       if(alpha >= 0 and beta >=0 and gamma >= 0):
-        if(x < 256 and y < 256):
+        if(x >= 0 and y >= 0 and x < 256 and y < 256):
           if z_at_pixel < z_buffer[x][y]:
             img.putpixel((x,y),col)
             z_buffer[x][y] = z_at_pixel
